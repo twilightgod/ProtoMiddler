@@ -36,19 +36,19 @@ namespace ProtoMiddler
 
             byte[] protobufBytes = null;
 
-            if (oSession.oRequest["Content-Type"].ToLower().Contains("protobuf"))
-            {
+            //if (oSession.oRequest["Content-Type"].ToLower().Contains("protobuf"))
+            //{
                 protobufBytes = oSession.requestBodyBytes;
 
                 _entityBody = protobufBytes;
                 _myControl.Data = ProtoBufUtil.DecodeRaw(protobufBytes);
                 _myControl.ProtobufBytes = protobufBytes;
                 
-            }
-            else
-            {
-                _myControl.Data = "NA";  // oSession.requestBodyBytes
-            }
+            //}
+            //else
+            //{
+            //    _myControl.Data = "NA";  // oSession.requestBodyBytes
+            //}
         }
 
         public override void AddToTab(TabPage o)
